@@ -27,7 +27,9 @@ $ pip install -r requirements.text
 ```
 
 ### Run
-`$ python app/bank.py`
+`$ python bank.py [name]`
+- -b, --balance
+  - Initial account balance
 
 ### Tests
 - Unit: `$ pytest tests`
