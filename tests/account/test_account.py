@@ -4,26 +4,27 @@ from app.account import Account
 
 
 class TestAccount:
-    def test_new_account(self):
+    def test_init_account(self):
         # Given
-        account_owner = "12345"
-        # When
-        new_account = Account(account_owner)
-        # Then
-        assert new_account.owner == account_owner
 
-    def test_new_account_id_not_none(self):
-        # Given
-        account_owner = "12345"
         # When
-        new_account = Account(account_owner)
+        account = Account()
         # Then
-        assert new_account.account_id is not None
+        assert account.balance == Decimal(0)
 
-    def test_new_account_balance_is_empty(self):
+    def test_init_account_with_balance(self):
         # Given
-        account_owner = "12345"
+        balance = Decimal(10)
         # When
-        new_account = Account(account_owner)
+        account = Account(balance)
         # Then
-        assert new_account.balance == Decimal(0)
+        assert account.balance == Decimal(10)
+
+    def test_withdraw(self):
+        # Given
+        account = Account(Decimal(100))
+        amount = Decimal(10)
+        # When
+        account.withdraw(amount)
+        # Then
+        assert account.balance == Decimal(90)

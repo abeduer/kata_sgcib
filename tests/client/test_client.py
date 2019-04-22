@@ -1,27 +1,32 @@
+from app.account import Account
 from app.client import Client
+
+from decimal import *
 
 
 class TestClient:
-    def test_new_client(self):
+    def test_init_client(self):
         # Given
-        client_name = "John Doe"
+        name = "John Doe"
         # When
-        new_client = Client(client_name)
+        client = Client(name)
         # Then
-        assert new_client.name == client_name
+        assert client.name == name
 
-    def test_new_client_id_not_none(self):
+    def test_client_default_account(self):
         # Given
-        client_name = "John Doe"
+        name = "John Doe"
         # When
-        new_client = Client(client_name)
+        client = Client(name)
         # Then
-        assert new_client.client_id is not None
+        assert client.account is not None
+        assert isinstance(client.account, Account)
 
-    def test_new_client_account_list_is_empty(self):
+    def test_client_with_account(self):
         # Given
-        client_name = "John Doe"
+        name = "John Doe"
+        account = Account(Decimal(10))
         # When
-        new_client = Client(client_name)
+        client = Client(name, account)
         # Then
-        assert new_client.account_list == []
+        assert client.account is account
