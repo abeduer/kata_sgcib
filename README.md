@@ -31,7 +31,7 @@ $ source ./venv/bin/activate
 $ pip install -r requirements.text
 ```
 
-### Run
+### Run cli implementation
 `$ python bank.py [name]`
 - -b, --balance
   - Initial account balance
