@@ -12,16 +12,21 @@
   - Then the new balance is 90.0 EUR
 
 ## Stack
-- Python 3
+- Python 3.5+
   - behave: behaviour-driven development
   - click: beautiful command line interfaces package
   - pytest: unit test framework
+
+## Contributing
+- Resource Oriented Architecture, each resource will grow in its own module
+- Respect PEP8 Style Guide
+- Avoid needless comments, let the code speak for itself
   
 ## Usage
 
 ### Install
 ```
-$ virtualenv -p python3 venv
+$ virtualenv -p python venv
 $ source ./venv/bin/activate
 $ pip install -r requirements.text
 ```
